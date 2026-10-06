@@ -66,11 +66,11 @@ public class CrapsApplication extends Application {
         stage.show();
         */
 
-
-
         // Un stage solo puedo tener UNA ESCENA; esta a su vez tiene un contenedor principal.
         //En este caso, GridBox
 
+
+        /*
         //Version con Scene builder
         stage.setTitle("Craps Game");
 
@@ -83,7 +83,15 @@ public class CrapsApplication extends Application {
         stage.show();
 
         //En las diapositivas ponen acciones diferentes
+         */
 
+
+
+
+        WelcomeView welcomeView = WelcomeView.getInstance(); //Obtiene una instancia
+        welcomeView.show();
+        //Necesitamos que SIEMPRE sea la misma ventana; por eso debemos aplicar el patrón de diseño simple
+        //Lo anterior es por si tenemos datos que siempre debemos mantener
     }
 }
 
