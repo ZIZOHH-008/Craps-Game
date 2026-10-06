@@ -21,7 +21,6 @@ public class CrapsController {
 
         if (response) {
             System.out.println("Nueva partida de " + nickname);
-        //Planta fdf
         }
     }
 

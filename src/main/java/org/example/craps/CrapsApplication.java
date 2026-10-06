@@ -74,7 +74,7 @@ public class CrapsApplication extends Application {
         //Version con Scene builder
         stage.setTitle("Craps Game");
 
-        FXMLLoader fxmlLoader = new FXMLLoader(CrapsApplication.class.getResource("welcome-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(CrapsApplication.class.getResource("/org/example/craps/welcome-view.fxml"));
 
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
