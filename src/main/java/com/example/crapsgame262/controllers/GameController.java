@@ -84,8 +84,8 @@ public class GameController {
         dropLabel.setText(String.valueOf(currentGame.getShot()));
         pointLabel.setText(String.valueOf(currentGame.getPoint()));
         summaryTextArea.setText(
-                "Juegos ganados: " + currentGame.getGamesWon() + "\n" +
-                "Juegos perdidos: " + currentGame.getGamesLost()
+                "Games won: " + currentGame.getGamesWon() + "\n" +
+                "Games lost: " + currentGame.getGamesLost()
         );
     }
 }

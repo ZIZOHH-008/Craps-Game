@@ -25,7 +25,7 @@
    <children>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: black;" GridPane.columnSpan="2">
          <children>
-            <Label text="A JUGAR CRAPS" textFill="WHITE">
+            <Label text="LET'S PLAY CRAPS" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -44,7 +44,7 @@
       </HBox>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" GridPane.rowIndex="1">
          <children>
-            <Label text="Zona de Juego">
+            <Label text="Game Zone">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -65,7 +65,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label text="Resultados">
+            <Label text="Results">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -80,12 +80,12 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Tiro:">
+                  <Label text="Shots:">
                      <GridPane.margin>
                         <Insets right="5.0" />
                      </GridPane.margin>
                   </Label>
-                  <Label text="Punto:" GridPane.rowIndex="1">
+                  <Label text="Points:" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets right="5.0" />
                      </GridPane.margin>
