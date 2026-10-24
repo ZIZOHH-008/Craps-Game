@@ -1,9 +1,11 @@
 package com.example.crapsgame262.controllers;
 
 import com.example.crapsgame262.models.Dice;
+import com.example.crapsgame262.models.Game;
 import com.example.crapsgame262.models.Player;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -11,6 +13,8 @@ import javafx.scene.input.MouseEvent;
 public class GameController {
 
     private Player currentPlayer;
+
+    private Game currentGame;
 
     @FXML
     private ImageView dice1ImageView;
@@ -21,6 +25,21 @@ public class GameController {
     @FXML
     private Label nicknameLabel;
 
+    @FXML
+    private Label dropLabel;
+
+    @FXML
+    private Label pointLabel;
+
+    @FXML
+    private TextArea summaryTextArea;
+
+    @FXML
+    public void initialize() {
+        currentGame = new Game();
+        updateGameView();
+    }
+
     public Player getCurrentPlayer() {
         return currentPlayer;
     }
@@ -28,12 +47,15 @@ public class GameController {
     public void setCurrentPlayer(Player currentPlayer) {
         this.currentPlayer = currentPlayer;
         nicknameLabel.setText(this.currentPlayer.getNickname());
+
+        currentGame = new Game();
+        updateGameView();
     }
 
     @FXML
     void onMouseClickedDropButton(MouseEvent event) {
         Dice dice1 = new Dice();
-        dice1.roll();
+        int dice1Value = dice1.roll();
 
         dice1ImageView.setImage(
                 new Image(
@@ -44,7 +66,7 @@ public class GameController {
         );
 
         Dice dice2 = new Dice();
-        dice2.roll();
+        int dice2Value = dice2.roll();
 
         dice2ImageView.setImage(
                 new Image(
@@ -52,6 +74,18 @@ public class GameController {
                                 dice2.getImagePath()
                         )
                 )
+        );
+
+        currentGame.play(dice1Value, dice2Value);
+        updateGameView();
+    }
+
+    private void updateGameView() {
+        dropLabel.setText(String.valueOf(currentGame.getShot()));
+        pointLabel.setText(String.valueOf(currentGame.getPoint()));
+        summaryTextArea.setText(
+                "Juegos ganados: " + currentGame.getGamesWon() + "\n" +
+                "Juegos perdidos: " + currentGame.getGamesLost()
         );
     }
 }
