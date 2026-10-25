@@ -82,8 +82,13 @@ public class GameController {
 
     private void updateGameView() {
         dropLabel.setText(String.valueOf(currentGame.getShot()));
-        pointLabel.setText(String.valueOf(currentGame.getPoint()));
+        if (!currentGame.isPointOn()) {
+            pointLabel.setText("-");
+        } else {
+            pointLabel.setText(String.valueOf(currentGame.getPoint()));
+        }
         summaryTextArea.setText(
+                currentGame.getMessage() + "\n\n" +
                 "Games won: " + currentGame.getGamesWon() + "\n" +
                 "Games lost: " + currentGame.getGamesLost()
         );

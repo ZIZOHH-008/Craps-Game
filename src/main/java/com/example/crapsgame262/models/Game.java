@@ -71,10 +71,10 @@ public class Game {
             // Come-out roll
             if (shot == 7 || shot == 11) {
                 gamesWon++;
-                message = "Natural " + shot + "! You win!";
+                message = "Natural " + shot + "! You win! Roll again to start a new round.";
             } else if (shot == 2 || shot == 3 || shot == 12) {
                 gamesLost++;
-                message = "Craps " + shot + "! You lose!";
+                message = "Craps " + shot + "! You lose! Roll again to start a new round.";
             } else {
                 point = shot;
                 message = "Point is set to " + point + ". Roll again to hit the point before rolling a 7.";
@@ -83,11 +83,11 @@ public class Game {
             // Point is established
             if (shot == point) {
                 gamesWon++;
-                message = "You made the point " + point + "! You win!";
+                message = "You made the point " + point + "! You win! Roll again to start a new round.";
                 point = 0;
             } else if (shot == 7) {
                 gamesLost++;
-                message = "Seven out! You lose!";
+                message = "Seven out! You lose! Roll again to start a new round.";
                 point = 0;
             } else {
                 message = "Roll " + shot + ". Keep rolling until you hit " + point + " or roll a 7.";
